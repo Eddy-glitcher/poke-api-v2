@@ -1,0 +1,20 @@
+:root{
+    /* Text colors */
+    --primary-text-color  : #0073E6;
+    --secondary-text-color: #6a7181;
+    --tertiary-text-color : #FBFBFC;
+
+    /* Border colors */
+    --primary-border-color  : rgb(224, 224, 224);
+    --secondary-border-color: #86b7fe;
+
+    /* Box shadows */
+    --primary-box-shadow: #7fb0ff82;
+
+    /* Background */
+    --primary-background      : #FCFCFD;
+    --primary-background-alter: #F4F5F7;
+    --secondary-background    : #0000008e;
+    --tertiary-background     : #1087ff;
+    --quaternary-background   : #F1F5F9;
+}

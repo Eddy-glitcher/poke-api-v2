@@ -1,0 +1,291 @@
+@use '@/assets/styles/mixins/mixins.scss' as *;
+
+.pokemons{
+    .grass{
+            background-color: #22C55E;
+        }
+        .poison{
+            background-color: #A855F7;
+        }
+        .fire{
+            background-color: #EF4444;
+        }
+        .water{
+            background-color: #3B82F6;
+        }
+        .bug{
+            background-color: #4ADE80;
+        }
+        .flying{
+            background-color: #818CF8;
+        }
+        .normal{
+            background-color: #94A3B8;
+        }
+        .electric{
+            background-color: #FACC15;
+        }
+        .fairy{
+            background-color: #F9A8D4;
+        }
+        .fighting{
+            background-color: #B91C1C;
+        }
+        .psychic{
+            background-color: #EC4899;
+        }
+        .rock{
+            background-color: #854D0E;
+        }
+        .ground{
+            background-color: #CA8A04;
+        }
+        .steel{
+            background-color: #6B7280;
+        }
+        .ice{
+            background-color: #BFDBFE;
+        }
+        .ghost{
+            background-color: #7E22CE;
+        }
+        .dragon{
+            background-color: #4338CA;
+        }
+        .dark{
+            background-color: #1F2937;
+        }
+}
+
+.card{
+    width: max-content;
+    max-width: 600px;
+    text-align: center;
+    border-radius: 10px;
+    border: solid 1px var(--primary-border-color);
+    background-color: var(--primary-background);
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 300ms ease-in-out, box-shadow 300ms ease-in-out;
+    
+    picture{
+        padding: 10px;
+        width: 200px;
+        height: 200px;
+        background-color: var(--primary-background-alter);
+    }
+    
+    h3{
+        transition: color 300ms ease-in-out;
+    }
+
+    article{
+        @include displayFlex(column, center);
+        gap: 5px;
+        padding: 20px;
+    }
+
+    span{
+        color: var(--secondary-text-color);
+    }
+
+    ul{
+        color: var(--tertiary-text-color);
+        @include displayFlex(row, center);
+        gap: 5px;
+
+        li{
+            padding: 2px 10px;
+            width: min-content;
+            border-radius: 20px;
+            font-size: var(--font-size-sm);
+        }
+    }
+
+    &:hover{
+        transform: scale(1.1);
+        box-shadow: 0px 0px 20px var(--primary-box-shadow);
+
+        h3{
+            color: var(--primary-text-color);
+        }
+    }
+}
+
+.card-info{
+    @include displayFlex(column, center);
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    z-index: 11111111;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    background-color: var(--secondary-background);
+    overflow-x: auto;
+
+    .card--content{
+        position: relative;
+        margin: 0px auto;
+        padding: 20px;
+        width: 90%;
+        min-width: 280px;
+        max-width: 800px;
+        text-align: center;
+        background-color: var(--primary-background);
+        border-radius: 5px;
+        overflow: auto;
+        cursor: auto;
+        
+        &:hover{
+            transform: none;
+            box-shadow: none;
+
+            h3{
+                color: initial;
+            }
+        }
+
+        article{
+            @include displayFlex(column, center);
+            gap: 10px;
+
+            .card__id{
+                position: absolute;
+                top: 10px;
+                left: 10px;
+            }
+
+            button{
+                position: absolute;
+                top: 10px;
+                right: 10px;
+            }
+
+            svg{
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        h2{
+            font-size: var(--font-size-xlg);
+        }
+
+        span{
+            color: var(--secondary-text-color);
+        }
+
+        picture{
+            padding: 10px;
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(to right, #8f94fb, #4e54c8);
+            border-radius: 100%;
+        }
+
+        ul{
+            margin: 10px 0px;
+        }
+
+        li{
+            padding: 10px 20px;
+            font-size: var(--font-size-md);
+        }
+
+        .pokemon-info{
+            flex-direction: column;
+            gap: 20px;
+            align-items: stretch;
+            
+            li{
+                flex-direction: column;
+                padding: 10px 30px;
+                background-color: var(--primary-background-alter);
+                border-radius: 5px;
+                width: 100%;
+            }
+            
+            span{
+                display: block;
+                font-size: var(--font-size-sm);
+            }
+
+            span:first-child{
+                font-size: var(--font-size-lg);
+                font-weight: 700;
+                color: var(--primary-text-color);
+            }
+        }
+
+        h3{
+            font-size: var(--font-size-lg);
+            font-weight: 500;
+        }
+
+        .pokemon__stats{
+            flex-direction: column;
+        }
+
+        .pokemon-stat{
+            @include displayFlex(row, space-between);
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-top: 10px;
+            width: 100%;
+            text-align: start;
+
+            span{
+                text-align: start;
+                color: initial;
+                font-weight: 500;
+            }
+
+            span:nth-child(2){
+                color: var(--primary-text-color);
+            }
+
+            li{
+                padding: 0px;
+                width: 100%;
+                height: 10px;
+                background-color: var(--quaternary-background);
+                overflow: hidden;
+
+                div{
+                    height: 100%;
+                    background-color: var(--tertiary-background);
+                }
+            }
+        }
+
+        .pokemon__abilities{
+            @include displayFlex(row, flex-start);
+            flex-wrap: wrap;
+
+            li{
+                width: max-content;
+                font-weight: 500;
+                padding: 5px 10px;
+                font-size: var(--font-size-sm);
+                color: initial;
+                border: solid 1px var(--primary-border-color);
+            }
+        }
+
+    }
+}
+
+@media (min-width: 600px) {
+    .card--content{
+        @include displayFlex(row, center);
+        
+        article{
+            flex: 1;
+        }
+
+        .pokemon-info{
+            @include displayFlex(row, center);
+        }
+    }
+}

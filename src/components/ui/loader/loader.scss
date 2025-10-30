@@ -1,0 +1,16 @@
+@use '@/assets/styles/mixins/mixins.scss' as *;
+@use '@/assets/styles/mixins/animations.scss' as *;
+
+.loader{
+    @include displayFlex(column, center);
+    height: 100%;
+    width: 100%;
+    font-size: var(--font-size-md);
+    text-align: center;
+
+    .loader__spin{
+        margin: 0px auto;
+        border-radius: 100%;
+        @include rotateAnimation();
+    }
+}

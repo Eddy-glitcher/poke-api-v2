@@ -1,0 +1,43 @@
+@use '@/assets/styles/mixins/mixins.scss' as *;
+@use '@/assets/styles/mixins/animations.scss' as *;
+
+.header{
+  padding: 20px;
+  text-align: center;
+  color: var(--tertiary-text-color);
+  background-color: var(--tertiary-background);
+
+  h1{
+    margin: 0px;
+    font-size: var(--font-size-xxlg);
+  }
+
+  p{
+    font-size: var(--font-size-md);
+  }
+}
+
+.main{
+  width: 100%;
+}
+
+.home{
+  width: 100%;
+  height: auto;
+  background-color: var(--primary-background);
+
+  .home__btn{
+    @include displayFlex(column, center);
+    position: fixed;
+    width: min-content;
+    bottom: 10px;
+    right: 10px;
+    border-radius: 5px;
+    padding: 4px;
+
+    svg{
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
