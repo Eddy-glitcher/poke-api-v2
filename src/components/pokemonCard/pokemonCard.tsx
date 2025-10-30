@@ -1,10 +1,9 @@
 import type { PokemonData } from '@/interfaces/pokemons-data.interface'
 import './pokemonCard.scss'
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { GlobalContext } from '@/contexts/global.context';
 import { pokemonImage } from '@/utils/pokemon-image';
-import { useLockBodyScroll } from '@uidotdev/usehooks';
 
 type PokemonCardProps = {
   pokemon: PokemonData;
