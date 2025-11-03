@@ -34,7 +34,7 @@ function PokemonCard({pokemon}: PokemonCardProps) {
       <section className='card' onClick={()=>{ selectPokemon(pokemon); setBlockScroll(true);}}>
         <article>
           <picture>
-            <img src={pokemonImage(pokemon.sprites)} alt={`${pokemon.name} image`} loading='lazy'/>
+            <img src={pokemonImage(pokemon.sprites)} alt={`${pokemon.name} image`} loading='lazy' fetchPriority={pokemon.id == 1 ? 'high' : 'auto'} width="100%" height="100%"/>
           </picture>
           <h3>{transformPokemonName(pokemon.name)}</h3>
           <span>{transformPokemonId(pokemon.id)}</span>
